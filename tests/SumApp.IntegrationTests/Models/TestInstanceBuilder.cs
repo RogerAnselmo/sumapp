@@ -30,7 +30,7 @@ namespace SumApp.IntegrationTests.Models
             var sqlOptionsBuilder = new SqlServerDbContextOptionsBuilder(dbOptionsBuilder);
 
             sqlOptionsBuilder.MigrationsAssembly(typeof(SumAppContext).GetTypeInfo().Assembly.GetName().Name);
-            dbOptionsBuilder.UseSqlServer(Configuration.GetConnectionString("SumAppConnStr"));
+            dbOptionsBuilder.UseSqlServer("Server=mssql-container:11433;Initial Catalog=SumDB; User ID=SA; Password=AVeryStr0ngP@ass!");
 
             SumAppContext = new SumAppContext(dbOptionsBuilder.Options);
             SumAppContext.Database.EnsureDeleted();

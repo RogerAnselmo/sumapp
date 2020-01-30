@@ -1,28 +1,40 @@
 version: '3'
 services: 
+    mssql-container:
+        build:
+            context: .
+            dockerfile: SqlServer.dockerfile
+        ports:
+            - "1433:1433"
+        networks: 
+            - test-network
+        container_name: 
+            mssql-container
+            
     sumapp-container:
         build: 
             context: .
             dockerfile: SumApp.dockerfile
+        depends_on: 
+            - mssql-container
         ports:
             - "5000:5000"
         networks: 
             - test-network
         container_name:
-             sumapp
+            sumapp-container
 
-    tests-container:
-        build: 
-            context: .
-            dockerfile: Tests.dockerfile
-        depends_on: 
-            - sumapp-container
-        networks: 
-                - test-network
-        container_name:
-             tests
+    # tests-container:
+    #     build: 
+    #         context: .
+    #         dockerfile: Tests.dockerfile
+    #     depends_on: 
+    #         - sumapp-container
+    #     networks: 
+    #         - test-network
+    #     container_name:
+    #         tests-container
 
 networks: 
     test-network:
         driver: bridge
-
