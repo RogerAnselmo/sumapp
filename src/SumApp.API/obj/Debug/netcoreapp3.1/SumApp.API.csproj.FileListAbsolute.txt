@@ -116,7 +116,6 @@ C:\projetos\estudo\SumApp\src\SumApp.API\bin\Debug\netcoreapp3.1\runtimes\win-x8
 C:\projetos\estudo\SumApp\src\SumApp.API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\projetos\estudo\SumApp\src\SumApp.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\projetos\estudo\SumApp\src\SumApp.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.csprojAssemblyReference.cache
 C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\staticwebassets\SumApp.API.StaticWebAssets.Manifest.cache
 C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\staticwebassets\SumApp.API.StaticWebAssets.xml
 C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.MvcApplicationPartsAssemblyInfo.cs
@@ -127,3 +126,4 @@ C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.Razo
 C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.csproj.CopyComplete
 C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.dll
 C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.pdb
+C:\projetos\estudo\SumApp\src\SumApp.API\obj\Debug\netcoreapp3.1\SumApp.API.csprojAssemblyReference.cache

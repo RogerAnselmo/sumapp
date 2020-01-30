@@ -23,10 +23,8 @@ namespace SumApp.Shared
 
         public async Task ResetDatabase()
         {
-            if (SumAppContext == null)
-                return;
-
-            await checkpoint.Reset(SumAppConnectionString);
+            if (SumAppContext != null)
+                await checkpoint.Reset(SumAppConnectionString);
         }
     }
 }
