@@ -1,41 +1,28 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.Hosting;
+﻿using Bogus;
 using NUnit.Framework;
-using SumApp.API;
-using SumApp.IntegrationTests.Models;
+using SumApp.Shared;
 using System.Threading.Tasks;
 
 namespace SumApp.IntegrationTests
 {
     [TestFixture]
-    public class GlobalSetUp: TestInstanceBuilder
+    public class GlobalSetUp
     {
-        private IHost _host;
+        public static Faker Faker = new Faker("pt_BR");
+        public static TestInstance TestInstance;
 
         [OneTimeSetUp]
-        public async Task OneTimeSetupAsync()
-        {
-            CreateDataBase();
-
-            var builder = new HostBuilder().ConfigureWebHost(webHost =>
-                {
-                    webHost.UseTestServer()
-                    .UseStartup<Startup>()
-                    .UseConfiguration(Configuration)
-                    .UseEnvironment("Test");
-                });
-
-            _host = await builder.StartAsync();
-            HttpClient = _host.GetTestServer()
-                .CreateClient();
-        }
+        public void OneTimeSetup() => 
+            TestInstance = new TestInstanceBuilder()
+            .CreateDataBase()
+            .CreateBackEndServer()
+            .Build();
 
         [TearDown]
         public async Task AllTestsTearDown() =>
-           await ResetDatabase();
+           await TestInstance.ResetDatabase();
 
         [OneTimeTearDown]
-        public void OneTimeTearDown() => _host?.Dispose();
+        public void OneTimeTearDown() => TestInstance.WebHost?.Dispose();
     }
 }

@@ -11,14 +11,24 @@ namespace SumApp.IntegrationTests.Specs.Repositories
         private TeamRepository teamRepository;
 
         [SetUp]
-        public void Setup() => teamRepository = new TeamRepository(SumAppContext);
+        public void Setup() => teamRepository = new TeamRepository(TestInstance.SumAppContext);
 
 
         [Test]
         public void ShouldSave()
         {
             teamRepository.Save(new Team { Name = Faker.Person.FirstName });
-            SumAppContext.Teams.Count().Should().Be(1);
+            TestInstance.SumAppContext.Teams.Count().Should().Be(1);
+        }
+
+
+        [Test]
+        public void ShouldGet()
+        {
+            teamRepository.Save(new Team { Name = Faker.Person.FirstName });
+            teamRepository.Save(new Team { Name = Faker.Person.FirstName });
+            teamRepository.Save(new Team { Name = Faker.Person.FirstName });
+            TestInstance.SumAppContext.Teams.Count().Should().Be(3);
         }
     }
 }

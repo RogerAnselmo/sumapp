@@ -30,8 +30,8 @@
           "Microsoft.AspNetCore.TestHost": "3.1.1",
           "Microsoft.NET.Test.Sdk": "16.2.0",
           "NUnit3TestAdapter": "3.15.1",
-          "Respawn": "3.2.0",
           "SumApp.API": "1.0.0",
+          "SumApp.Shared": "1.0.0",
           "NUnit": "3.12.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -2674,6 +2674,23 @@
         },
         "compile": {
           "SumApp.API.dll": {}
+        }
+      },
+      "SumApp.Shared/1.0.0": {
+        "dependencies": {
+          "Bogus": "28.4.4",
+          "Microsoft.AspNetCore.TestHost": "3.1.1",
+          "Microsoft.NET.Test.Sdk": "16.2.0",
+          "NUnit3TestAdapter": "3.15.1",
+          "Respawn": "3.2.0",
+          "SumApp.API": "1.0.0",
+          "NUnit": "3.12.0"
+        },
+        "runtime": {
+          "SumApp.Shared.dll": {}
+        },
+        "compile": {
+          "SumApp.Shared.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -5412,6 +5429,11 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "SumApp.API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SumApp.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

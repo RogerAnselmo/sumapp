@@ -18,7 +18,7 @@ namespace SumApp.IntegrationTests.Specs.Controllers
         [Test]
         public async Task ShouldGetTeams()
         {
-            var result = await HttpClient.GetAsync(controllerUrl);
+            var result = await TestInstance.HttpClient.GetAsync(controllerUrl);
             result.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
@@ -30,7 +30,7 @@ namespace SumApp.IntegrationTests.Specs.Controllers
             HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            var result = await HttpClient.PostAsync(controllerUrl, httpContent);
+            var result = await TestInstance.HttpClient.PostAsync(controllerUrl, httpContent);
             result.StatusCode.Should().Be(HttpStatusCode.OK);
         }
     }

@@ -29,9 +29,9 @@ namespace SumApp.API
                         Version = "1.0"
                     }));
 
-            //var connectionString = Configuration.GetSection("ConnectionStrings:SumAppConnStr");
-            //services.AddDbContext<SumAppContext>(x => x.UseSqlServer(connectionString.Value));
-            services.AddDbContext<SumAppContext>(x => x.UseSqlServer("Server=mssql-container,1433;Initial Catalog=SumDB; User ID=SA; Password=ABC!@#321aa"));
+            var connectionString = Configuration.GetSection("ConnectionStrings:SumAppConnStr");
+            services.AddDbContext<SumAppContext>(x => x.UseSqlServer(connectionString.Value));
+            // services.AddDbContext<SumAppContext>(x => x.UseSqlServer("Server=mssql-container,1433;Initial Catalog=SumDB; User ID=SA; Password=ABC!@#321a"));
 
             services.AddScoped<TeamRepository>();
         }

@@ -691,3 +691,5 @@ C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\obj\Debug\netcoreapp3.1\
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\obj\Debug\netcoreapp3.1\SumApp.IntegrationTests.csproj.CopyComplete
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\obj\Debug\netcoreapp3.1\SumApp.IntegrationTests.dll
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\obj\Debug\netcoreapp3.1\SumApp.IntegrationTests.pdb
+C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\SumApp.Shared.dll
+C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\SumApp.Shared.pdb

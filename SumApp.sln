@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Tests.dockerfile = Tests.dockerfile
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumApp.Shared", "tests\SumApp.Shared\SumApp.Shared.csproj", "{55505D7B-49CC-48D6-A29A-25C6859DDE0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{BEE89D66-9B7E-473D-AC4F-BEFAFD9BC425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEE89D66-9B7E-473D-AC4F-BEFAFD9BC425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEE89D66-9B7E-473D-AC4F-BEFAFD9BC425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55505D7B-49CC-48D6-A29A-25C6859DDE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55505D7B-49CC-48D6-A29A-25C6859DDE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55505D7B-49CC-48D6-A29A-25C6859DDE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55505D7B-49CC-48D6-A29A-25C6859DDE0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{060E4963-50EC-43B3-8913-CC09A4DCDFC5} = {FE0D44A9-6CF2-4905-8CF0-A5B52EAD4613}
 		{2AE48FCD-DAEE-42E2-B123-F921DF25ADAD} = {5698477B-D7F9-4E38-81E8-CF76B938BBA8}
 		{BEE89D66-9B7E-473D-AC4F-BEFAFD9BC425} = {5698477B-D7F9-4E38-81E8-CF76B938BBA8}
+		{55505D7B-49CC-48D6-A29A-25C6859DDE0C} = {5698477B-D7F9-4E38-81E8-CF76B938BBA8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62FBBBA2-BFBC-4BE3-B699-C1CA3FD0F70F}
