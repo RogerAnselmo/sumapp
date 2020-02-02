@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SumApp.API.Repositories.Context;
 
@@ -16,26 +17,26 @@ namespace SumApp.API.Repositories
             DbSet = Db.Set<TEntity>();
         }
 
-        public virtual bool Save(TEntity obj)
+        public virtual async Task<bool> SaveAsync(TEntity obj)
         {
             DbSet.Add(obj);
-            return SaveChanges();
+            return await SaveChangesAsync();
         }
 
-        public virtual TEntity Get(int id) => DbSet.Find(id);
+        public virtual async Task<TEntity> Get(int id) => await DbSet.FindAsync(id);
 
-        public virtual IQueryable<TEntity> Get() => DbSet;
+        public virtual async Task<IQueryable<TEntity>> Get() => DbSet;
 
-        public virtual bool Update(TEntity obj)
+        public virtual async Task<bool> UpdateAsync(TEntity obj)
         {
             DbSet.Update(obj);
-            return SaveChanges();
+            return await SaveChangesAsync();
         }
 
-        public virtual bool Remove(int id)
+        public virtual async Task<bool> RemoveAsync(int id)
         {
             DbSet.Remove(DbSet.Find(id));
-            return SaveChanges();
+            return await SaveChangesAsync();
         }
 
         public void Dispose()
@@ -43,7 +44,8 @@ namespace SumApp.API.Repositories
             Db.Dispose();
             GC.SuppressFinalize(this);
         }
-        
-        private bool SaveChanges() => Db.SaveChanges() > 0;
+
+        private async Task<bool> SaveChangesAsync() =>
+            (await Db.SaveChangesAsync()) > 0;
     }
 }

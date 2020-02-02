@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AutoBogus/2.8.0": {
+        "type": "package",
+        "dependencies": {
+          "Bogus": "28.4.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoBogus.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoBogus.dll": {}
+        }
+      },
       "Bogus/28.4.4": {
         "type": "package",
         "compile": {
@@ -2635,6 +2647,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "AutoBogus": "2.8.0",
           "Bogus": "28.4.4",
           "Microsoft.AspNetCore.TestHost": "3.1.1",
           "Microsoft.NET.Test.Sdk": "16.2.0",
@@ -2656,6 +2669,21 @@
     }
   },
   "libraries": {
+    "AutoBogus/2.8.0": {
+      "sha512": "x/SowB2ZQUigduL3Okg0ioV1/skTZz6a8ew9gpjf0kdNY/RgfbEg//6oBcxwaarWRg4TLcVjnJUIQcSGx+jpKA==",
+      "type": "package",
+      "path": "autobogus/2.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autobogus.2.8.0.nupkg.sha512",
+        "autobogus.nuspec",
+        "lib/net40/AutoBogus.dll",
+        "lib/netstandard1.3/AutoBogus.dll",
+        "lib/netstandard2.0/AutoBogus.dll",
+        "logo.png"
+      ]
+    },
     "Bogus/28.4.4": {
       "sha512": "L8VKtXaxl7Nh3ITxvoQ5XRZkh6qhflkiEXd6xufyHqHTEjHnA2a/HVftV19UoloeHsinqtwWnTMq9RU9Kcq+mA==",
       "type": "package",

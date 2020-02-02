@@ -1,5 +1,4 @@
-﻿using Bogus;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Respawn;
 using SumApp.API.Repositories.Context;
@@ -24,7 +23,11 @@ namespace SumApp.Shared
         public async Task ResetDatabase()
         {
             if (SumAppContext != null)
-                await checkpoint.Reset(SumAppConnectionString);
+            {
+                await SumAppContext.Database.OpenConnectionAsync();
+                await checkpoint.Reset(SumAppContext.Database.GetDbConnection());
+                await SumAppContext.Database.CloseConnectionAsync();
+            }
         }
     }
 }

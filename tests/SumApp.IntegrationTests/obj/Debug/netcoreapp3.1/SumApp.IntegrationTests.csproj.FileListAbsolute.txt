@@ -219,6 +219,7 @@ C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\SumApp.IntegrationTests.runtimeconfig.dev.json
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\SumApp.IntegrationTests.dll
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\SumApp.IntegrationTests.pdb
+C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\AutoBogus.dll
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\Bogus.dll
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\FluentAssertions.dll
 C:\projetos\estudo\SumApp\tests\SumApp.IntegrationTests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll

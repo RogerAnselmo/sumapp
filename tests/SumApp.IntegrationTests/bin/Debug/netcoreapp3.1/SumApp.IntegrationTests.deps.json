@@ -20,6 +20,17 @@
           "SumApp.IntegrationTests.dll": {}
         }
       },
+      "AutoBogus/2.8.0": {
+        "dependencies": {
+          "Bogus": "28.4.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoBogus.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.0.0"
+          }
+        }
+      },
       "Bogus/28.4.4": {
         "runtime": {
           "lib/netstandard2.0/Bogus.dll": {
@@ -1938,6 +1949,7 @@
       },
       "SumApp.Shared/1.0.0": {
         "dependencies": {
+          "AutoBogus": "2.8.0",
           "Bogus": "28.4.4",
           "Microsoft.AspNetCore.TestHost": "3.1.1",
           "Microsoft.NET.Test.Sdk": "16.2.0",
@@ -1957,6 +1969,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoBogus/2.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x/SowB2ZQUigduL3Okg0ioV1/skTZz6a8ew9gpjf0kdNY/RgfbEg//6oBcxwaarWRg4TLcVjnJUIQcSGx+jpKA==",
+      "path": "autobogus/2.8.0",
+      "hashPath": "autobogus.2.8.0.nupkg.sha512"
     },
     "Bogus/28.4.4": {
       "type": "package",

@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Threading.Tasks;
 using AutoBogus;
 using FakeItEasy;
 using FluentAssertions;
@@ -28,27 +29,27 @@ namespace SumApp.UnitTests.Controller
         {
             [SetUp]
             public void SetUp() => A.CallTo(() =>
-                    Repository.Save(Team)).Returns(true);
+                    Repository.SaveAsync(Team)).Returns(true);
 
             [Test]
-            public void ShouldCallRepositorySave()
+            public async Task ShouldCallRepositorySave()
             {
-                Controller.Post(Team);
-                A.CallTo(() => Repository.Save(Team))
+                await Controller.Post(Team);
+                A.CallTo(() => Repository.SaveAsync(Team))
                     .MustHaveHappenedOnceExactly();
             }
 
             [Test]
-            public void ShouldReturnCreatedForSuccessfulPost() =>
-                Controller.Post(Team)
+            public async Task ShouldReturnCreatedForSuccessfulPost() =>
+                (await Controller.Post(Team))
                     .Should()
                     .Be(HttpStatusCode.Created);
 
             [Test]
-            public void ShouldReturnInternalServerErrorForFailedPost()
+            public async Task ShouldReturnInternalServerErrorForFailedPost()
             {
-                A.CallTo(() => Repository.Save(Team)).Returns(false);
-                Controller.Post(Team)
+                A.CallTo(() => Repository.SaveAsync(Team)).Returns(false);
+                (await Controller.Post(Team))
                     .Should()
                     .Be(HttpStatusCode.InternalServerError);
             }
@@ -79,27 +80,27 @@ namespace SumApp.UnitTests.Controller
         {
             [SetUp]
             public void SetUp() => A.CallTo(() =>
-                Repository.Update(Team)).Returns(true);
+                Repository.UpdateAsync(Team)).Returns(true);
 
             [Test]
-            public void ShouldCallRepositoryUpdate()
+            public async Task ShouldCallRepositoryUpdate()
             {
-                Controller.Put(Team);
-                A.CallTo(() => Repository.Update(Team))
+                await Controller.Put(Team);
+                A.CallTo(() => Repository.UpdateAsync(Team))
                     .MustHaveHappenedOnceExactly();
             }
 
             [Test]
-            public void ShouldReturnOkForSuccessfulPut() =>
-                Controller.Put(Team)
+            public async Task ShouldReturnOkForSuccessfulPut() =>
+                (await Controller.Put(Team))
                     .Should()
                     .Be(HttpStatusCode.OK);
 
             [Test]
-            public void ShouldReturnInternalServerErrorForFailedPut()
+            public async Task ShouldReturnInternalServerErrorForFailedPut()
             {
-                A.CallTo(() => Repository.Update(Team)).Returns(false);
-                Controller.Put(Team)
+                A.CallTo(() => Repository.UpdateAsync(Team)).Returns(false);
+                (await Controller.Put(Team))
                     .Should()
                     .Be(HttpStatusCode.InternalServerError);
             }
@@ -114,28 +115,28 @@ namespace SumApp.UnitTests.Controller
             {
                 _id = Faker.Random.Int();
                 A.CallTo(() =>
-                    Repository.Remove(_id)).Returns(true);
+                    Repository.RemoveAsync(_id)).Returns(true);
             }
 
             [Test]
-            public void ShouldCallRepositoryRemove()
+            public async Task ShouldCallRepositoryRemove()
             {
-                Controller.Delete(_id);
-                A.CallTo(() => Repository.Remove(_id))
+                await Controller.Delete(_id);
+                A.CallTo(() => Repository.RemoveAsync(_id))
                     .MustHaveHappenedOnceExactly();
             }
 
             [Test]
-            public void ShouldReturnOkForSuccessfulDelete() =>
-                Controller.Delete(_id)
+            public async Task ShouldReturnOkForSuccessfulDelete() =>
+                (await Controller.Delete(_id))
                     .Should()
                     .Be(HttpStatusCode.OK);
 
             [Test]
-            public void ShouldReturnInternalServerErrorForFailedDelete()
+            public async Task ShouldReturnInternalServerErrorForFailedDelete()
             {
-                A.CallTo(() => Repository.Remove(A<int>._)).Returns(false);
-                Controller.Delete(_id)
+                A.CallTo(() => Repository.RemoveAsync(A<int>._)).Returns(false);
+                (await Controller.Delete(_id))
                     .Should()
                     .Be(HttpStatusCode.InternalServerError);
             }

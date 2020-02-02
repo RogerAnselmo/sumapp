@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SumApp.API.Models;
 using SumApp.API.Repositories;
@@ -13,26 +14,26 @@ namespace SumApp.API.Controllers
         public TeamController(TeamRepository repository) => _repository = repository;
 
         [HttpGet]
-        public ObjectResult Get() => Ok(_repository.Get());
+        public async Task<ObjectResult> Get() => Ok(await _repository.Get());
 
         [HttpGet("{id:int}")]
-        public ObjectResult Get(int id) => Ok(_repository.Get(id));
+        public async Task<ObjectResult> Get(int id) => Ok(await _repository.Get(id));
 
         [HttpPost]
-        public HttpStatusCode Post(Team team) =>
-            _repository.Save(team) ? 
+        public async Task<HttpStatusCode> Post(Team team) =>
+            await _repository.SaveAsync(team) ? 
                 HttpStatusCode.Created : 
                 HttpStatusCode.InternalServerError;
 
         [HttpPut]
-        public HttpStatusCode Put([FromBody] Team team) => 
-            _repository.Update(team) ? 
+        public async Task<HttpStatusCode> Put([FromBody] Team team) => 
+            await _repository.UpdateAsync(team) ? 
                 HttpStatusCode.OK : 
                 HttpStatusCode.InternalServerError;
 
         [HttpDelete("{id}")]
-        public HttpStatusCode Delete(int id) => 
-            _repository.Remove(id) ? 
+        public async Task<HttpStatusCode> Delete(int id) => 
+            await _repository.RemoveAsync(id) ? 
                 HttpStatusCode.OK : 
                 HttpStatusCode.InternalServerError;
     }

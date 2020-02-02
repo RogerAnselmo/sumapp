@@ -31,8 +31,7 @@ namespace SumApp.API
 
             var connectionString = Configuration.GetSection("ConnectionStrings:SumAppConnStr");
             services.AddDbContext<SumAppContext>(x => x.UseSqlServer(connectionString.Value));
-            //services.AddDbContext<SumAppContext>(x => x.UseSqlServer("Server=tcp:mssql-container,1433;Initial Catalog=SumDBTest;User ID=SA; Password=ABC!@#321a"));
-
+            
             services.AddScoped<TeamRepository>();
         }
 
