@@ -3,7 +3,7 @@ COPY ./src /src
 
 WORKDIR /src/SumApp.API
 
-RUN dotnet restore
+RUN dotnet restore --disable-parallel
 RUN dotnet publish -c Release -o publish
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
